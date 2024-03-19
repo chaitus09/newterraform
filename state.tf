@@ -1,17 +1,14 @@
 terraform {
-
-
-    required_providers {
-      aws = {
-        source = "hashicorp/aws"
-        version = "5.41.0"
-      }
-    }
+  backend "s3" {
+    bucket = "ch-jaikeer1"
+    key    = "testing/state"
+    region = "us-east-1"
   }
+}
 
-  provider "aws" {
-    region =  "us-east-1"
-  }
+resource "null_resource" "dummy1" {}
+
+
 
 
 
